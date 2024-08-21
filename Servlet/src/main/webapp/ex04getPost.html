@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Get 방식 (QueryString)-->
+	<!-- 
+		URL뒤에 데이터를 담아서 전달하는 방식
+		전달하고 싶은 서버URL?name1=value1&name2=value2
+		
+		장점 : 데이터가 한눈에 보인다
+			Post에 비해 속도가 조금 더 빠르다
+		단점 : 보안에 취약하다 매우!
+			데이터 전송 양의 한계가 있다 (약 1024byte)
+	 -->
+	 <form action="Ex04GetPost" method="get">
+	 	<input type="text" name="text">
+	 	<input type="submit">
+	 </form>
+	 
+	 <!-- Post 방식 -->
+	 <!-- 
+	 	데이터를 패킷 바디에 담아서 보내는 방식
+	 	
+	 	장점 : 많은 양의 데이터를 보낼 수 있다
+	 		데이터가 노출되지 않는다(get보다 보안에 강력)
+	  -->
+	  <form action="Ex04GetPost" method="post">
+	 	<input type="text" name="text">
+	 	<input type="submit">
+	 </form>
+</body>
+</html>

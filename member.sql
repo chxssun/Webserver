@@ -1,0 +1,31 @@
+CREATE TABLE MEMBER(
+    EMAIL VARCHAR2(100) PRIMARY KEY,
+    PW VARCHAR2(100) NOT NULL,
+    PHONE VARCHAR2(50) NOT NULL,
+    ADDR VARCHAR2(100) NOT NULL
+);
+INSERT INTO MEMBER VALUES('admain@aischool.co.kr', 'qwer', '010-1234-5678', '광주광역시 동구 제봉로 92 대성학원');
+
+COMMIT;
+
+SELECT * FROM MEMBER;
+
+CREATE TABLE MESSAGE (
+    NUM NUMBER,  --메세지 번호 (중복 x) --
+    NAME VARCHAR2(100) NOT NULL,  -- 보내는 사람 이름 --
+    EMAIL VARCHAR2(100) NOT NULL,  -- 받는 사람 이메일 --
+    CONTENTS VARCHAR2(1000) NOT NULL,  -- 내용 --
+    INDATE DATE  -- 작성 시간 -- 
+);    
+
+CREATE SEQUENCE MSGNUM START WITH 1 INCREMENT BY 1;
+
+INSERT INTO MESSAGE VALUES(MSGNUM.NEXTVAL, '손흥민', 'chxssun9410@gmail.com', '나랑 축구하자 캐리해주께', SYSDATE);
+INSERT INTO MESSAGE VALUES(MSGNUM.NEXTVAL, '아이유', 'chxssun9410@gmail.com', '노래방 가자', SYSDATE);
+INSERT INTO MESSAGE VALUES(MSGNUM.NEXTVAL, '백종원', 'chxssun9410@gmail.com', '내가 만든건데 먹어볼래?', SYSDATE);
+INSERT INTO MESSAGE VALUES(MSGNUM.NEXTVAL, '이재용', 'chxssun9410@gmail.com', '좋은 소식있는데 들어볼래?', SYSDATE);
+INSERT INTO MESSAGE VALUES(MSGNUM.NEXTVAL, '박병관', 'chxssun9410@gmail.com', '공부안하냐?', SYSDATE);
+COMMIT;
+
+SELECT * FROM MESSAGE;
+
