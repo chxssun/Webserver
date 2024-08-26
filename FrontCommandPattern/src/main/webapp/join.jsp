@@ -36,7 +36,7 @@
 		<div class="panel panel-default">
 		  <div class="panel-heading">회원가입</div>
 		  <div class="panel-body">
-		  	<form action="JoinController" method="post">
+		  	<form action="join.do" method="post">
 			  <div class="form-group">
 			    <label for="id"> ID : </label>
 			    <input name="id" type="text" class="form-control" id="id">

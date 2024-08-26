@@ -1,20 +1,20 @@
 package com.controller;
 
 import java.io.IOException;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.front.Command;
 import com.model.WMemberDAO;
 import com.model.WMemberVO;
 
-@WebServlet("/JoinController")
-public class JoinController extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+public class JoinController implements Command {
+
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");  // 문자 인코딩 !!
 		
 		String id = request.getParameter("id");
@@ -24,7 +24,7 @@ public class JoinController extends HttpServlet {
 		// System.out.println(id + "/" + pw + "/" + nick);
 		
 		if (id.isEmpty() || pw.isEmpty() || nick.isEmpty()) {
-			response.sendRedirect("join.jsp");
+			return "join.jsp";
 		}else {
 			WMemberVO vo = new WMemberVO(id, pw, nick);
 			
@@ -37,11 +37,7 @@ public class JoinController extends HttpServlet {
 			}else {
 				System.out.println("회원가입 실패");
 			}
-			response.sendRedirect("main.jsp");
+			return "main.jsp";
 		}
-		
-		
-	
 	}
-
 }

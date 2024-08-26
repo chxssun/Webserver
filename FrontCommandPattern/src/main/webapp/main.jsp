@@ -38,7 +38,6 @@
 		  <div class="panel-heading">메인페이지</div>
 		  <div class="panel-body">
 		  	
-		  	
 		  	<!-- 로그인을 안했을때 -->
 		  	<c:if test="${empty info }">
 			  	<a href="login.jsp"><button class="btn btn-primary">로그인</button></a>	
@@ -48,11 +47,11 @@
 		  	<!-- 로그인을 했을때 -->
 		  	<c:if test="${not empty info }">
 			  	<c:out value="${info.nick }"/>님 Welcome!
-			  	<a href="LogoutController" class="btn btn-danger">로그아웃</a>
+			  	<a href="logout.do" class="btn btn-danger">로그아웃</a>
 			  	
 			  	<!-- 아이디가 admin인 사람만 -->
 			  	<c:if test="${info.id eq 'admin' }">
-				  	<a href="ListController" class="btn btn-info">회원정보</a>			  	
+				  	<a href="list.do" class="btn btn-info">회원정보</a>			  	
 			  	</c:if>
 		  	</c:if>
 		  	

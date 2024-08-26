@@ -36,7 +36,7 @@
 		<div class="panel panel-default">
 		  <div class="panel-heading">·Î±×ÀÎ</div>
 		  <div class="panel-body">
-		  	<form action="LoginController" method="post">
+		  	<form action="login.do" method="post">
 			  <div class="form-group">
 			    <label for="id"> ID : </label>
 			    <input name="id" type="text" class="form-control" id="id">
