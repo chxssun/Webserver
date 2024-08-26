@@ -27,10 +27,10 @@ public class FrontController extends HttpServlet {
 		
 		// 1. client가 요청한 전체 url 가져오기
 		String requestURL = request.getRequestURI();
-		
+		System.out.println(requestURL);
 		// 2. Context Path 가져오기
 		String contextPath = request.getContextPath();
-		
+		System.out.println(contextPath);
 		// 3. 요청 url만 가져오기
 		String url = requestURL.substring(contextPath.length());
 		System.out.println(url);
